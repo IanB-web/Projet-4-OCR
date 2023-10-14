@@ -1,0 +1,319 @@
+@import "../vendor/normalize.scss";
+
+@import "../utils/variables.scss";
+@import "../utils/mixins.scss";
+@import "../utils/keyframes.scss";
+
+@import "../base/_base.scss";
+
+@import "../layout/header.scss";
+@import "../layout/footer.scss";
+
+@import "../component/loader.scss";
+@import "../component/button.scss";
+@import "../component/heart.scss";
+
+.img {
+    max-height: 400px;
+    object-fit: cover;
+}
+
+.heart-container {
+    bottom: 18px;
+    left: 70%;
+    transition: 0.5s;
+
+    @media screen and (max-width: 420px) {
+        bottom: 13px;
+    }
+    @media screen and (max-width: 700px) {
+        left: 86%;
+    }
+    @media screen and (min-width: 840px) {
+        left: 66%;
+    }
+}
+
+/****main content *****/
+.content {
+    &__box {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        background-color: $color-bg;
+        border-radius: 40px 40px 0 0;
+        margin: -40px 0 0 0;
+        z-index: 1;
+        max-width: 1150px;
+        overflow: hidden;
+    }
+    &__main {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        transition: linear 3s;
+    }
+    &__title {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        box-sizing: border-box;
+        width: 100%;
+        position: relative;
+        gap: 10px;
+        margin: auto;
+        padding: 40px 20px 0 20px;
+        @media screen and (max-width: 700px) {
+            justify-content: flex-start;
+        }
+    }
+}
+
+.section__title {
+    display: flex;
+    font-family: Shrikhand;
+    font-size: 28px;
+    font-weight: inherit;
+    font-weight: 400;
+    animation-delay: 2s;
+    justify-content: space-evenly;
+    transition: 0.5s;
+    @media screen and (max-width: 420px) {
+        font-size: 24px;
+    }
+}
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    width: 100%;
+    max-width: 700px;
+    margin: auto;
+
+    &__box {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    &__title {
+        margin: 0;
+        position: relative;
+        margin-bottom: 12px;
+        font-size: 16px;
+        font-weight: 300;
+        text-transform: uppercase;
+        margin-left: 15px;
+
+        &::before {
+            content: "";
+            width: 40px;
+            height: 3px;
+            background: $color-lightgreen;
+            position: absolute;
+            top: calc(100% + 5px);
+            left: 0;
+        }
+    }
+}
+
+/***** menus *****/
+
+.inputMenu {
+    display: none;
+}
+
+.card {
+    display: flex;
+    flex-direction: row;
+    height: 69px;
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin: 0px 13px 0px 13px;
+    border-radius: 15px;
+    background-color: $color-white;
+    box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.1);
+    position: relative;
+    box-sizing: border-box;
+    overflow: hidden;
+
+    &:hover {
+        cursor: pointer;
+        .card__content {
+            width: calc(100% - 150px);
+        }
+    }
+}
+
+.card__content {
+    display: flex;
+    flex-direction: column;
+    width: calc(100% - 70px);
+    height: 69px;
+    padding: 0px 15px;
+    justify-content: center;
+    position: relative;
+    transition: width 0.3s;
+}
+
+.inputMenu:checked + .card .card__content {
+    width: calc(100% - 150px);
+}
+
+.inputMenu:checked + .card .card__checked {
+    transform: translateX(0px);
+}
+
+.card__checked {
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    right: 0px;
+    transform: translateX(69px);
+    transition: linear 0.3s;
+
+    .fa {
+        display: inline-block;
+        justify-content: center;
+        align-items: center;
+        align-self: center;
+        width: 69px;
+        height: 69px;
+        border-radius: 0px 15px 15px 0px;
+        background-color: $color-lightgreen;
+        display: flex;
+        color: $color-white;
+        font-size: 20px;
+    }
+}
+
+.label {
+    position: absolute;
+    width: 100%;
+    height: 69px;
+    border-radius: 15px;
+    z-index: 1;
+    cursor: pointer;
+}
+
+.card:hover {
+    .card__checked {
+        transform: translateX(0px);
+    }
+}
+
+.card {
+    &__txt {
+        font-size: 15px;
+        font-weight: 300;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    &__cost {
+        display: flex;
+        align-items: flex-end;
+        font-size: 15px;
+        font-weight: 700;
+        width: 45px;
+        padding-bottom: 15px;
+    }
+    &__title {
+        font-size: 18px;
+        font-weight: 600;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+    }
+}
+
+/*** Button ***/
+.btn__box {
+    display: flex;
+    justify-content: center;
+}
+
+.btn {
+    width: 186px;
+    font-weight: 400;
+    &:hover {
+        &::after {
+            opacity: 1;
+        }
+    }
+}
+
+.btn::after {
+    width: 186px;
+}
+
+.order--btn {
+    border: transparent;
+    margin-bottom: 40px;
+    animation: flip-in-hor-bottom 1s both;
+    animation-delay: 8.5s;
+}
+
+/*** animations */ //
+.starter {
+    &1 {
+        animation: flip-in-hor-bottom 1s both;
+        animation-delay: 3.6s;
+    }
+    &2 {
+        animation: flip-in-hor-bottom 1s both;
+        animation-delay: 4s;
+    }
+    &3 {
+        animation: flip-in-hor-bottom 1s both;
+        animation-delay: 4.4s;
+    }
+    &4 {
+        animation: flip-in-hor-bottom 1s both;
+        animation-delay: 4.8s;
+    }
+}
+.title {
+    &1 {
+        animation: slide-in-left 1s both;
+        animation-delay: 2.3s;
+    }
+    &2 {
+        animation: slide-in-left 1s both;
+        animation-delay: 4.8s;
+    }
+    &3 {
+        animation: slide-in-left 1s both;
+        animation-delay: 6.5s;
+    }
+}
+.dish {
+    &1 {
+        animation: flip-in-hor-bottom 1s both;
+        animation-delay: 5.7s;
+    }
+    &2 {
+        animation: flip-in-hor-bottom 1s both;
+        animation-delay: 6.1s;
+    }
+    &3 {
+        animation: flip-in-hor-bottom 1s both;
+        animation-delay: 6.5s;
+    }
+}
+.dessert {
+    &1 {
+        animation: flip-in-hor-bottom 1s both;
+        animation-delay: 7.4s;
+    }
+    &2 {
+        animation: flip-in-hor-bottom 1s both;
+        animation-delay: 7.8s;
+    }
+    &3 {
+        animation: flip-in-hor-bottom 1s both;
+        animation-delay: 8.2s;
+    }
+}
+//pour rappel : sass --watch scss/pages/restaurant.scss css/restaurant.min.css  --style compressed
