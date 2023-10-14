@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ohmyfood</title>
+    <meta name="description"
+        content="Ohmyfood, commande de repas en ligne. Composez votre propre menu et réduisez votre temps d'attente dans les restaurants! Plus de perte de temps à consulter la carte!">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Shrikhand&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+
+    <link rel="stylesheet" href="../css/restaurant.min.css">
+</head>
+
+<body>
+
+    <div class="loader">
+        <div id="loader">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+
+        <div class="loader__title">Ohmyfood</div>
+        <div class="loader__txt">en cours de chargement...</div>
+    </div>
+
+    <header class="page-header">
+
+        <nav class="nav">
+
+            <div class="nav__header">
+                <a class="back-arrow" href="../index.html">
+                    <i class="fa-xl fa fa-arrow-left"></i>
+                </a>
+
+                <a href="../index.html">
+                    <p class="nav__logo">ohmyfood</p>
+                </a>
+            </div>
+
+        </nav>
+        <img src="../images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg" alt="image d'un plat" class="img">
+    </header>
+
+    <main class="content__box">
+        <section class="content__main">
+            <header class="content__title">
+                <h1 class="section__title">La palette du goût</h1>
+                <svg id='heart' height="0" width="0">
+                    <defs>
+                        <clipPath id="svgPath">
+                            <path
+                                d="M20,35.09,4.55,19.64a8.5,8.5,0,0,1-.13-12l.13-.13a8.72,8.72,0,0,1,12.14,0L20,10.79l3.3-3.3a8.09,8.09,0,0,1,5.83-2.58,8.89,8.89,0,0,1,6.31,2.58,8.5,8.5,0,0,1,.13,12l-.13.13Z" />
+                        </clipPath>
+                    </defs>
+                </svg>
+
+                <div class="heart-container">
+                    <svg width="40" height="40" viewBox="0 0 40 40" class='heart-stroke'>
+                        <path
+                            d="M20,35.07,4.55,19.62a8.5,8.5,0,0,1-.12-12l.12-.12a8.72,8.72,0,0,1,12.14,0L20,10.77l3.3-3.3A8.09,8.09,0,0,1,29.13,4.9a8.89,8.89,0,0,1,6.31,2.58,8.5,8.5,0,0,1,.12,12l-.12.12ZM10.64,7.13A6.44,6.44,0,0,0,6.07,18.19L20,32.06,33.94,18.12A6.44,6.44,0,0,0,34,9l0,0a6.44,6.44,0,0,0-4.77-1.85A6,6,0,0,0,24.83,9L20,13.78,15.21,9A6.44,6.44,0,0,0,10.64,7.13Z" />
+                    </svg>
+
+                    <a href='#' class='heart-clip'></a>
+                </div>
+            </header>
+
+            <form class="menu">
+
+                <div class="menu__box">
+                    <h2 class="menu__title title1">Entrées</h2>
+
+                    <input type="radio" id="starter1" name="starter" class="inputMenu">
+                    <div class="card starter1">
+                        <label for="starter1" class="label"></label>
+                        <div class="card__content">
+                            <h3 class="card__title">Fricassée d'escargots</h3>
+                            <span class="card__txt">Au piment d'Espelette</span>
+                        </div>
+                        <div class="card__checked">
+                            <span class="card__cost">25€</span>
+                            <i class="fa fa-check-circle"></i>
+                        </div>
+                    </div>
+
+                    <input type="radio" id="starter2" name="starter" class="inputMenu">
+                    <div class="card starter2">
+                        <label for="starter2" class="label"></label>
+                        <div class="card__content">
+                            <h3 class="card__title">Foie gras de canard mi-cuit</h3>
+                            <span class="card__txt">Et ses copeaux de truffe noire</span>
+                        </div>
+                        <div class="card__checked">
+                            <span class="card__cost">35€</span>
+                            <i class="fa fa-check-circle"></i>
+                        </div>
+                    </div>
+
+
+                    <input type="radio" id="starter3" name="starter" class="inputMenu">
+                    <div class="card starter3">
+                        <label for="starter3" class="label"></label>
+                        <div class="card__content">
+                            <h3 class="card__title">Œuf au plat</h3>
+                            <span class="card__txt">Assaisonné à la truffe sur lit de caviar</span>
+                        </div>
+                        <div class="card__checked">
+                            <span class="card__cost">20€</span>
+                            <i class="fa fa-check-circle"></i>
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <div class="menu__box">
+                    <h2 class="menu__title title2">Plats</h2>
+
+                    <input type="radio" id="dish1" name="dish" class="inputMenu">
+                    <div class="card dish1">
+                        <label for="dish1" class="label"></label>
+                        <div class="card__content">
+                            <h3 class="card__title">Filet de bœuf aux herbes</h3>
+                            <span class="card__txt">Accompagné de sa ribambelle de légumes</span>
+                        </div>
+                        <div class="card__checked">
+                            <span class="card__cost">40€</span>
+                            <i class="fa fa-check-circle"></i>
+                        </div>
+                    </div>
+
+
+                    <input type="radio" id="dish2" name="dish" class="inputMenu">
+                    <div class="card dish2">
+                        <label for="dish2" class="label"></label>
+                        <div class="card__content">
+                            <h3 class="card__title">Parmentier de queue de bœuf</h3>
+                            <span class="card__txt">À la truffe noire sur sa purée de panais</span>
+                        </div>
+                        <div class="card__checked">
+                            <span class="card__cost">35€</span>
+                            <i class="fa fa-check-circle"></i>
+                        </div>
+                    </div>
+
+                    <input type="radio" id="dish3" name="dish" class="inputMenu">
+                    <div class="card dish3">
+                        <label for="dish3" class="label"></label>
+                        <div class="card__content">
+                            <h3 class="card__title">Filet de turbot</h3>
+                            <span class="card__txt">Aux agrumes</span>
+                        </div>
+                        <div class="card__checked">
+                            <span class="card__cost">44€</span>
+                            <i class="fa fa-check-circle"></i>
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <div class="menu__box">
+                    <h2 class="menu__title title3">Desserts</h2>
+
+                    <input type="radio" id="dessert1" name="dessert" class="inputMenu">
+                    <div class="card dessert1">
+                        <label for="dessert1" class="label"></label>
+                        <div class="card__content">
+                            <h3 class="card__title">Paris-Brest</h3>
+                            <span class="card__txt">Revisité</span>
+                        </div>
+                        <div class="card__checked">
+                            <span class="card__cost">18€</span>
+                            <i class="fa fa-check-circle"></i>
+                        </div>
+                    </div>
+
+
+                    <input type="radio" id="dessert2" name="dessert" class="inputMenu">
+                    <div class="card dessert2">
+                        <label for="dessert2" class="label"></label>
+                        <div class="card__content">
+                            <h3 class="card__title">Macaron au chocolat d'exception</h3>
+                            <span class="card__txt">Et glace à la vanille de Madagascar</span>
+                        </div>
+                        <div class="card__checked">
+                            <span class="card__cost">22€</span>
+                            <i class="fa fa-check-circle"></i>
+                        </div>
+                    </div>
+
+                    <input type="radio" id="dessert3" name="dessert" class="inputMenu">
+                    <div class="card dessert3">
+                        <label for="dessert3" class="label"></label>
+                        <div class="card__content">
+                            <h3 class="card__title">Mousse au chocolat</h3>
+                            <span class="card__txt">Au piment d'Espelette et à la truffe noire</span>
+                        </div>
+                        <div class="card__checked">
+                            <span class="card__cost">23€</span>
+                            <i class="fa fa-check-circle"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="btn__box">
+                    <button type="button" class="btn order--btn">Commander</button>
+                </div>
+
+            </form>
+
+        </section>
+    </main>
+
+    <!-- Footer avec liens -->
+    <footer class="page-footer">
+
+        <div class="box-footer">
+            <a href="../index.html" class="box-footer__title">ohmyfood</a>
+            <ul class="footer__linkbox">
+                <li class="icon-linkbox">
+                    <i class="fa fa-utensils footer__icon"></i>
+                    <a href="#" class="footer__links text">Proposer un restaurant</a>
+                </li>
+                <li class="icon-linkbox">
+                    <i class="fa fa-handshake-angle footer__icon"></i>
+                    <a href="#" class="footer__links text">Devenir partenaire</a>
+                </li>
+                <li>
+                    <a href="#" class="footer__links text-light">Mentions légales</a>
+                </li>
+                <li>
+                    <a href="mailto:contact@ohmyfood.fr" class="footer__links text-light">Contact</a>
+                </li>
+            </ul>
+        </div>
+
+    </footer>
+
+</body>
+
+</html>
