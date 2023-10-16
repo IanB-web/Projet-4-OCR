@@ -20,9 +20,12 @@
 }
 
 .back-arrow {
-    display: block;
+    display: flex;
     position: absolute;
     left: 23px;
+    width: 40px;
+    height:30px;
+    align-items: center;
     transition: 0.4s;
     transition-timing-function: cubic-bezier(0.33, 0.32, 0.85, 1.4);
 
